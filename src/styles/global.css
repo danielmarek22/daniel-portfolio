@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@keyframes drift-slow {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(20px, -15px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@keyframes drift-slower {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(-30px, 40px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+.drift-slow {
+  animation: drift-slow 20s ease-in-out infinite;
+}
+
+.drift-slower {
+  animation: drift-slower 30s ease-in-out infinite;
+}
