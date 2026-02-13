@@ -1,17 +1,55 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Daniel Marek">
+
+  <section class="min-h-screen flex flex-col justify-center pt-24 px-6 max-w-4xl mx-auto space-y-8">
+
+
+	<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+	  Daniel Marek
+	</h1>
+
+
+  <p class="mt-6 text-xl md:text-2xl text-slate-400">
+      Autonomy & AI Engineer
+  </p>
+
+  <p class="mt-6 max-w-2xl text-slate-400 leading-relaxed">
+      I design machine learning systems for perception, autonomy and real-world deployment —
+      from planetary rover concepts to satellite data analysis.
+  </p>
+
+</section>
+
+<section id="projects" class="py-24 px-6 max-w-4xl mx-auto">
+  <h2 class="text-3xl md:text-4xl font-semibold mb-12">
+    Selected Projects
+  </h2>
+
+  <div class="space-y-12">
+
+    <div>
+      <h3 class="text-xl font-medium">Planetary Rover Autonomy Concepts</h3>
+      <p class="text-slate-400 mt-3 leading-relaxed">
+        Research and prototyping of AI-based perception and navigation systems
+        for planetary exploration scenarios.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-medium">Methane Super-Emitter Detection</h3>
+      <p class="text-slate-400 mt-3 leading-relaxed">
+        Machine learning pipeline for detecting methane emission patterns
+        using multispectral satellite imagery.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</Layout>
+
+
+
