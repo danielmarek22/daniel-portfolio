@@ -51,7 +51,7 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
 
@@ -226,7 +226,7 @@ import.meta.env.BASE_URL
 
     <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
   <!-- PROJECTS PREVIEW -->
@@ -337,7 +337,7 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
 <section class="py-32 px-6 max-w-6xl mx-auto">
@@ -407,7 +407,7 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
   <!-- PUBLICATIONS PREVIEW -->
@@ -443,10 +443,8 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
-
-
 
   <!-- ACHIEVEMENTS PREVIEW -->
    <section class="py-32 px-6 max-w-[1400px] mx-auto">
@@ -481,37 +479,59 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
-
-
   <!-- CONTACT -->
-   <section class="py-32 px-6 max-w-[1400px] mx-auto">
+  <section class="pt-16 pb-32 px-6 max-w-[1400px] mx-auto">
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-12">
       Contact
     </h2>
 
-    <p class="text-slate-400 max-w-2xl leading-relaxed">
-      Open to collaboration, research opportunities, and engineering roles
-      in AI, robotics, and space technologies.
+    <p class="text-slate-400 max-w-2xl leading-relaxed mb-12">
+      Interested in collaboration or research opportunities in AI, robotics, or space technologies?
+      Feel free to reach out.
     </p>
 
-    <div class="mt-10 flex flex-wrap gap-8 text-slate-300">
-      <a href="mailto:danielmarek22@email.com" class="hover:text-white transition">
-        Email
+    <div class="flex items-center gap-10">
+
+      <!-- Email -->
+      <a href="mailto:danielmarek22@email.com"
+        class="group flex flex-col items-center gap-3 text-slate-400 hover:text-white transition">
+
+        <img src={`${import.meta.env.BASE_URL}logos/gmail.svg`}
+            class="h-8 opacity-70 group-hover:opacity-100 transition duration-300" />
+
+        <span class="text-sm">Email</span>
       </a>
 
-      <a href="https://github.com/danielmarek22" target="_blank" class="hover:text-white transition">
-        GitHub
+
+      <!-- GitHub -->
+      <a href="https://github.com/danielmarek22"
+        target="_blank"
+        class="group flex flex-col items-center gap-3 text-slate-400 hover:text-white transition">
+
+        <img src={`${import.meta.env.BASE_URL}logos/github.svg`}
+            class="h-8 opacity-70 group-hover:opacity-100 transition duration-300" />
+
+        <span class="text-sm">GitHub</span>
       </a>
 
-      <a href="https://www.linkedin.com/in/daniel-marek22"
-         target="_blank"
-         class="hover:text-white transition">
-        LinkedIn
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/daniel-marek22"
+        target="_blank"
+        class="group flex flex-col items-center gap-3 text-slate-400 hover:text-white transition">
+
+        <img src={`${import.meta.env.BASE_URL}logos/linkedin.svg`}
+            class="h-8 opacity-70 group-hover:opacity-100 transition duration-300" />
+
+        <span class="text-sm">LinkedIn</span>
       </a>
+
     </div>
+
   </section>
+
 
 </Layout>
