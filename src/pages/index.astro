@@ -13,7 +13,7 @@ import.meta.env.BASE_URL
       <!-- Text -->
       <div class="space-y-8">
         <p class="text-sm uppercase tracking-widest text-slate-500">
-          AI Systems Engineer
+          AI Engineer
         </p>
 
         <h1 class="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
@@ -30,7 +30,7 @@ import.meta.env.BASE_URL
         </p>
 
         <div class="pt-4">
-          <a href="/about"
+          <a href={`${import.meta.env.BASE_URL}about`}
              class="inline-block px-6 py-3 text-sm font-medium text-white bg-slate-800 hover:bg-slate-700 transition rounded-lg border border-slate-700">
             Learn more about me →
           </a>
@@ -192,7 +192,7 @@ import.meta.env.BASE_URL
       Projects
     </h2>
 
-    <a href="/projects"
+    <a href={`${import.meta.env.BASE_URL}projects`}
        class="text-sm text-slate-400 hover:text-white transition group">
       View all
       <span class="inline-block transition-transform group-hover:translate-x-1">
@@ -365,7 +365,7 @@ import.meta.env.BASE_URL
         Publications
       </h2>
 
-      <a href="/papers" class="text-sm text-slate-400 hover:text-white transition group">
+      <a href={`${import.meta.env.BASE_URL}papers`} class="text-sm text-slate-400 hover:text-white transition group">
         View all
         <span class="inline-block transition-transform group-hover:translate-x-1">
           →
@@ -394,7 +394,7 @@ import.meta.env.BASE_URL
         Achievements
       </h2>
 
-      <a href="/achievements" class="text-sm text-slate-400 hover:text-white transition group">
+      <a href={`${import.meta.env.BASE_URL}achievements`} class="text-sm text-slate-400 hover:text-white transition group">
         View all
         <span class="inline-block transition-transform group-hover:translate-x-1">
           →
