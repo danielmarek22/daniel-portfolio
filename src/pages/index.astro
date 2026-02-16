@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import.meta.env.BASE_URL
 ---
 
 <Layout title="Daniel Marek">
@@ -38,7 +39,7 @@ import Layout from "../layouts/Layout.astro";
 
       <!-- Image -->
       <div class="flex justify-center md:justify-end">
-        <img src="/profile.jpg"
+        <img src={`${import.meta.env.BASE_URL}profile.jpg`}
              alt="Daniel Marek"
              class="w-72 md:w-80 rounded-2xl object-cover border border-slate-800 shadow-xl" />
       </div>
