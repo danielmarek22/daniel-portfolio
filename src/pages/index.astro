@@ -50,41 +50,316 @@ import.meta.env.BASE_URL
 
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-[1400px] mx-auto px-6">
     <div class="h-px bg-slate-800"></div>
   </div>
+
+
+  <!-- SCIENTIFIC FOCUS -->
+    <section class="py-32 px-6 max-w-[1400px] mx-auto">
+
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-16">
+      Scientific Focus
+    </h2>
+
+    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+
+      <!-- Subtle inner frame -->
+      <div class="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-inset ring-white/5"></div>
+
+      <div class="flex flex-col md:flex-row h-[420px] md:h-[520px]">
+
+        <!-- Panel 1 -->
+        <div class="group relative flex-1 transition-all duration-700 ease-out hover:flex-[1.2]">
+
+          <img
+            src={`${import.meta.env.BASE_URL}robotics.jpg`}
+            class="absolute inset-0 w-full h-full object-cover
+                  brightness-40 group-hover:brightness-90
+                  transition duration-700 ease-out"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent
+                      group-hover:from-black/50 transition duration-700"></div>
+
+          <div class="relative z-10 p-10 flex items-end h-full">
+            <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-700 ease-out">
+              <h3 class="text-2xl font-semibold text-white">
+                Autonomous Robotics
+              </h3>
+              <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-700 mt-4 max-w-sm">
+                Perception-driven autonomy for planetary and mobile robotic systems.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Panel 2 -->
+        <div class="group relative flex-1 transition-all duration-700 ease-out hover:flex-[1.2]">
+
+          <img
+            src={`${import.meta.env.BASE_URL}vision.jpg`}
+            class="absolute inset-0 w-full h-full object-cover
+                  brightness-40 group-hover:brightness-90
+                  transition duration-700 ease-out"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent
+                      group-hover:from-black/50 transition duration-700"></div>
+
+          <div class="relative z-10 p-10 flex items-end h-full">
+            <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-700 ease-out">
+              <h3 class="text-2xl font-semibold text-white">
+                Computer Vision
+              </h3>
+              <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-700 mt-4 max-w-sm">
+                Deep learning for 3D perception, mapping, and environmental understanding.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Panel 3 -->
+        <div class="group relative flex-1 transition-all duration-700 ease-out hover:flex-[1.2]">
+
+          <img
+            src={`${import.meta.env.BASE_URL}space.jpg`}
+            class="absolute inset-0 w-full h-full object-cover
+                  brightness-40 group-hover:brightness-90
+                  transition duration-700 ease-out"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent
+                      group-hover:from-black/50 transition duration-700"></div>
+
+          <div class="relative z-10 p-10 flex items-end h-full">
+            <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-700 ease-out">
+              <h3 class="text-2xl font-semibold text-white">
+                Space Systems
+              </h3>
+              <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-700 mt-4 max-w-sm">
+                On-board AI pipelines and remote sensing applications for space missions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Panel 4 -->
+        <div class="group relative flex-1 transition-all duration-700 ease-out hover:flex-[1.2]">
+
+          <img
+            src={`${import.meta.env.BASE_URL}embedded.jpg`}
+            class="absolute inset-0 w-full h-full object-cover
+                  brightness-40 group-hover:brightness-90
+                  transition duration-700 ease-out"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent
+                      group-hover:from-black/50 transition duration-700"></div>
+
+          <div class="relative z-10 p-10 flex items-end h-full">
+            <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-700 ease-out">
+              <h3 class="text-2xl font-semibold text-white">
+                Embedded AI
+              </h3>
+              <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-700 mt-4 max-w-sm">
+                Model optimization, quantization, and deployment for resource-constrained systems.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+    <!-- Divider -->
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="h-px bg-slate-800"></div>
+  </div>
+
 
 
   <!-- PROJECTS PREVIEW -->
   <section class="py-32 px-6 max-w-6xl mx-auto">
-    <div class="flex items-center justify-between mb-12">
-      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
-        Projects
-      </h2>
 
-      <a href="/projects" class="text-sm text-slate-400 hover:text-white transition group">
-        View all
-        <span class="inline-block transition-transform group-hover:translate-x-1">
-          →
-        </span>
-      </a>
+  <div class="flex items-center justify-between mb-20">
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
+      Projects
+    </h2>
+
+    <a href="/projects"
+       class="text-sm text-slate-400 hover:text-white transition group">
+      View all
+      <span class="inline-block transition-transform group-hover:translate-x-1">
+        →
+      </span>
+    </a>
+  </div>
+
+  <div class="space-y-28">
+
+    <!-- Project 1 -->
+    <div class="grid md:grid-cols-2 gap-12 items-center group">
+
+      <!-- Image -->
+      <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-lg">
+        <img src={`${import.meta.env.BASE_URL}project-rover.jpg`}
+             class="w-full h-[300px] object-cover
+                    brightness-60 group-hover:brightness-90
+                    transition duration-700" />
+      </div>
+
+      <!-- Text -->
+      <div>
+        <h3 class="text-2xl font-semibold text-slate-200">
+          Autonomous Rover Systems
+        </h3>
+
+        <p class="text-slate-400 mt-6 leading-relaxed">
+          Deep learning-based perception, mapping, and evaluation-driven refinement
+          for planetary robotic systems.
+        </p>
+      </div>
+
     </div>
 
-    <p class="text-slate-400 max-w-2xl leading-relaxed">
-      Research and applied machine learning projects focused on autonomous perception,
-      planetary robotics, and intelligent system deployment.
-    </p>
-  </section>
 
+    <!-- Project 2 (Reversed) -->
+    <div class="grid md:grid-cols-2 gap-12 items-center group md:flex-row-reverse">
+
+      <!-- Image -->
+      <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-lg md:order-2">
+        <img src={`${import.meta.env.BASE_URL}project-depth.jpg`}
+             class="w-full h-[300px] object-cover
+                    brightness-60 group-hover:brightness-90
+                    transition duration-700" />
+      </div>
+
+      <!-- Text -->
+      <div class="md:order-1">
+        <h3 class="text-2xl font-semibold text-slate-200">
+          Depth Estimation & 3D Mapping
+        </h3>
+
+        <p class="text-slate-400 mt-6 leading-relaxed">
+          Stereo-based depth estimation and three-dimensional spatial reconstruction
+          using state-of-the-art deep learning models.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Project 3 -->
+    <div class="grid md:grid-cols-2 gap-12 items-center group">
+
+      <!-- Image -->
+      <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-lg">
+        <img src={`${import.meta.env.BASE_URL}project-rock.jpg`}
+            class="w-full h-[300px] object-cover
+                    brightness-60 group-hover:brightness-90
+                    transition duration-700" />
+      </div>
+
+      <!-- Text -->
+      <div>
+        <h3 class="text-2xl font-semibold text-slate-200">
+          Rock Detection
+        </h3>
+
+        <p class="text-slate-400 mt-6 leading-relaxed">
+          Deep learning-based segmentation and classification of extraterrestrial terrain,
+          focused on reliable on-board inference for planetary exploration systems.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-[1400px] mx-auto px-6">
     <div class="h-px bg-slate-800"></div>
   </div>
 
+<section class="py-32 px-6 max-w-6xl mx-auto">
+
+  <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-16">
+    Technical Stack
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-12">
+
+    <!-- Machine Learning -->
+    <div class="group p-8 rounded-2xl border border-slate-800 bg-slate-900/40
+                transition duration-500 hover:border-slate-600">
+
+      <h3 class="text-lg font-medium text-slate-200 mb-6">
+        Machine Learning
+      </h3>
+
+      <div class="flex flex-wrap gap-6 items-center">
+
+        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
+          <img src={`${import.meta.env.BASE_URL}logos/pytorch.svg`} class="h-6" />
+          <span class="text-sm text-slate-300">PyTorch</span>
+        </div>
+
+        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
+          <img src={`${import.meta.env.BASE_URL}logos/tensorflow.svg`} class="h-6" />
+          <span class="text-sm text-slate-300">TensorFlow</span>
+        </div>
+
+        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
+          <img src={`${import.meta.env.BASE_URL}logos/mlflow.svg`} class="h-6" />
+          <span class="text-sm text-slate-300">MLflow</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Systems & Deployment -->
+    <div class="group p-8 rounded-2xl border border-slate-800 bg-slate-900/40
+                transition duration-500 hover:border-slate-600">
+
+      <h3 class="text-lg font-medium text-slate-200 mb-6">
+        Systems & Deployment
+      </h3>
+
+      <div class="flex flex-wrap gap-6 items-center">
+
+        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
+          <img src={`${import.meta.env.BASE_URL}logos/docker.svg`} class="h-6" />
+          <span class="text-sm text-slate-300">Docker</span>
+        </div>
+
+        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
+          <img src={`${import.meta.env.BASE_URL}logos/ros.svg`} class="h-6" />
+          <span class="text-sm text-slate-300">ROS</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+  <!-- Divider -->
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="h-px bg-slate-800"></div>
+  </div>
 
   <!-- PUBLICATIONS PREVIEW -->
-  <section class="py-32 px-6 max-w-6xl mx-auto">
+   <section class="py-32 px-6 max-w-[1400px] mx-auto">
     <div class="flex items-center justify-between mb-12">
       <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
         Publications
@@ -106,13 +381,14 @@ import.meta.env.BASE_URL
 
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-[1400px] mx-auto px-6">
     <div class="h-px bg-slate-800"></div>
   </div>
 
 
+
   <!-- ACHIEVEMENTS PREVIEW -->
-  <section class="py-32 px-6 max-w-6xl mx-auto">
+   <section class="py-32 px-6 max-w-[1400px] mx-auto">
     <div class="flex items-center justify-between mb-12">
       <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
         Achievements
@@ -134,13 +410,14 @@ import.meta.env.BASE_URL
 
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-[1400px] mx-auto px-6">
     <div class="h-px bg-slate-800"></div>
   </div>
 
 
+
   <!-- CONTACT -->
-  <section class="py-32 px-6 max-w-6xl mx-auto">
+   <section class="py-32 px-6 max-w-[1400px] mx-auto">
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-12">
       Contact
     </h2>
