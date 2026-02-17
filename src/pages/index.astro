@@ -51,7 +51,7 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
 
@@ -162,7 +162,7 @@ import.meta.env.BASE_URL
               Computer Vision
             </h3>
             <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-700 mt-4 max-w-sm">
-              Deep learning for 3D perception, mapping, and environmental understanding.
+              Classic and deep learning-based computer vision for perception and environment understanding.
             </p>
           </div>
         </div>
@@ -184,7 +184,7 @@ import.meta.env.BASE_URL
       <div class="relative z-10 p-10 flex items-end h-full">
         <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-700 ease-out">
           <h3 class="text-2xl font-semibold text-white">
-            Space Systems
+            Remote sensing & Space Systems
           </h3>
           <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-700 mt-4 max-w-sm">
             On-board AI pipelines and remote sensing applications for space missions.
@@ -226,24 +226,33 @@ import.meta.env.BASE_URL
 
     <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
   <!-- PROJECTS PREVIEW -->
-  <section class="py-32 px-6 max-w-6xl mx-auto">
+  <section class="py-36 px-6 max-w-[1400px] mx-auto">
 
   <div class="flex items-center justify-between mb-20">
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
       Projects
     </h2>
 
-    <a href={`${import.meta.env.BASE_URL}projects`}
-       class="text-sm text-slate-400 hover:text-white transition group">
-      View all
-      <span class="inline-block transition-transform group-hover:translate-x-1">
-        →
-      </span>
-    </a>
+      <a href={`${import.meta.env.BASE_URL}projects`}
+            class="inline-flex items-center gap-2 px-5 py-2.5
+            rounded-lg border border-slate-700
+            text-sm font-medium text-slate-300
+            bg-slate-900/40
+            hover:bg-slate-800/60 hover:border-slate-500
+            hover:text-white
+            transition duration-300 group">
+
+    View all
+
+    <span class="transition-transform duration-300 group-hover:translate-x-1">
+      →
+    </span>
+  </a>
+
   </div>
 
   <div class="space-y-28">
@@ -262,12 +271,11 @@ import.meta.env.BASE_URL
       <!-- Text -->
       <div>
         <h3 class="text-2xl font-semibold text-slate-200">
-          Autonomous Rover Systems
+          Bird’s Eye View in Planetary Rovers
         </h3>
 
         <p class="text-slate-400 mt-6 leading-relaxed">
-          Deep learning-based perception, mapping, and evaluation-driven refinement
-          for planetary robotic systems.
+          Deep learning-based perception and obstacle mapping, for planetary robotic systems.
         </p>
       </div>
 
@@ -288,12 +296,11 @@ import.meta.env.BASE_URL
       <!-- Text -->
       <div class="md:order-1">
         <h3 class="text-2xl font-semibold text-slate-200">
-          Depth Estimation & 3D Mapping
+          Resource Frugal Depth Estimation
         </h3>
 
         <p class="text-slate-400 mt-6 leading-relaxed">
-          Stereo-based depth estimation and three-dimensional spatial reconstruction
-          using state-of-the-art deep learning models.
+          Stereo-based depth estimation using state-of-the-art deep learning models for resource-constrained systems.
         </p>
       </div>
 
@@ -313,11 +320,11 @@ import.meta.env.BASE_URL
       <!-- Text -->
       <div>
         <h3 class="text-2xl font-semibold text-slate-200">
-          Rock Detection
+          Planetary Rock Segemntation using Deep Learning
         </h3>
 
         <p class="text-slate-400 mt-6 leading-relaxed">
-          Deep learning-based segmentation and classification of extraterrestrial terrain,
+          Deep learning-based segmentation of extraterrestrial terrain,
           focused on reliable on-board inference for planetary exploration systems.
         </p>
       </div>
@@ -328,79 +335,158 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
-<section class="py-32 px-6 max-w-6xl mx-auto">
+<section class="py-36 px-6 max-w-[1400px] mx-auto">
 
-  <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-16">
+  <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-100 mb-24">
     Technical Stack
   </h2>
 
-  <div class="grid md:grid-cols-2 gap-12">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
 
     <!-- Machine Learning -->
-    <div class="group p-8 rounded-2xl border border-slate-800 bg-slate-900/40
-                transition duration-500 hover:border-slate-600">
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(56,189,248,0.12)]">
 
-      <h3 class="text-lg font-medium text-slate-200 mb-6">
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
         Machine Learning
       </h3>
 
-      <div class="flex flex-wrap gap-6 items-center">
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/pytorch.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">PyTorch</span>
-        </div>
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/tensorflow.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">TensorFlow</span>
-        </div>
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/mlflow.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">MLflow</span>
-        </div>
-
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/pytorch.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/tensorflow.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/sklearn.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/lightning.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/opencv.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/ollama.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
       </div>
-
     </div>
 
-    <!-- Systems & Deployment -->
-    <div class="group p-8 rounded-2xl border border-slate-800 bg-slate-900/40
-                transition duration-500 hover:border-slate-600">
 
-      <h3 class="text-lg font-medium text-slate-200 mb-6">
+    <!-- Data Analysis -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(139,92,246,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-purple-500/10 to-indigo-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Data Analysis
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/pandas.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/numpy.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/matplotlib.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
+    </div>
+
+
+    <!-- Web Development -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(34,197,94,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-green-500/10 to-emerald-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Web Development
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/django.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/flask.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/sqlite.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
+    </div>
+
+
+    <!-- Programming -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(249,115,22,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-orange-500/10 to-yellow-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Programming
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/python.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/cpp.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/java.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/ros.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
+    </div>
+
+
+    <!-- Systems & Deployment -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(59,130,246,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-blue-500/10 to-slate-500/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
         Systems & Deployment
       </h3>
 
-      <div class="flex flex-wrap gap-6 items-center">
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/docker.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">Docker</span>
-        </div>
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/ros.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">ROS</span>
-        </div>
-
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/docker.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/jenkins.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/git.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/linux.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/mlflow.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
       </div>
+    </div>
 
+
+    <!-- Cloud -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(245,158,11,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-amber-500/10 to-orange-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Cloud
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/aws.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
     </div>
 
   </div>
-
 </section>
-
-
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
   <!-- PUBLICATIONS PREVIEW -->
@@ -410,9 +496,18 @@ import.meta.env.BASE_URL
         Publications
       </h2>
 
-      <a href={`${import.meta.env.BASE_URL}papers`} class="text-sm text-slate-400 hover:text-white transition group">
+      <a href={`${import.meta.env.BASE_URL}papers`}
+        class="inline-flex items-center gap-2 px-5 py-2.5
+                rounded-lg border border-slate-700
+                text-sm font-medium text-slate-300
+                bg-slate-900/40
+                hover:bg-slate-800/60 hover:border-slate-500
+                hover:text-white
+                transition duration-300 group">
+
         View all
-        <span class="inline-block transition-transform group-hover:translate-x-1">
+
+        <span class="transition-transform duration-300 group-hover:translate-x-1">
           →
         </span>
       </a>
@@ -427,10 +522,8 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
-
-
 
   <!-- ACHIEVEMENTS PREVIEW -->
    <section class="py-32 px-6 max-w-[1400px] mx-auto">
@@ -439,9 +532,18 @@ import.meta.env.BASE_URL
         Achievements
       </h2>
 
-      <a href={`${import.meta.env.BASE_URL}achievements`} class="text-sm text-slate-400 hover:text-white transition group">
+      <a href={`${import.meta.env.BASE_URL}achievements`}
+        class="inline-flex items-center gap-2 px-5 py-2.5
+                rounded-lg border border-slate-700
+                text-sm font-medium text-slate-300
+                bg-slate-900/40
+                hover:bg-slate-800/60 hover:border-slate-500
+                hover:text-white
+                transition duration-300 group">
+
         View all
-        <span class="inline-block transition-transform group-hover:translate-x-1">
+
+        <span class="transition-transform duration-300 group-hover:translate-x-1">
           →
         </span>
       </a>
@@ -456,37 +558,59 @@ import.meta.env.BASE_URL
 
   <!-- Divider -->
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="h-px bg-slate-800"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
-
-
   <!-- CONTACT -->
-   <section class="py-32 px-6 max-w-[1400px] mx-auto">
+  <section class="pt-16 pb-32 px-6 max-w-[1400px] mx-auto">
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-12">
       Contact
     </h2>
 
-    <p class="text-slate-400 max-w-2xl leading-relaxed">
-      Open to collaboration, research opportunities, and engineering roles
-      in AI, robotics, and space technologies.
+    <p class="text-slate-400 max-w-2xl leading-relaxed mb-12">
+      Interested in collaboration or research opportunities in AI, robotics, or space technologies?
+      Feel free to reach out.
     </p>
 
-    <div class="mt-10 flex flex-wrap gap-8 text-slate-300">
-      <a href="mailto:danielmarek22@email.com" class="hover:text-white transition">
-        Email
+    <div class="flex items-center gap-10">
+
+      <!-- Email -->
+      <a href="mailto:danielmarek22@email.com"
+        class="group flex flex-col items-center gap-3 text-slate-400 hover:text-white transition">
+
+        <img src={`${import.meta.env.BASE_URL}logos/gmail.svg`}
+            class="h-8 opacity-70 group-hover:opacity-100 transition duration-300" />
+
+        <span class="text-sm">Email</span>
       </a>
 
-      <a href="https://github.com/danielmarek22" target="_blank" class="hover:text-white transition">
-        GitHub
+
+      <!-- GitHub -->
+      <a href="https://github.com/danielmarek22"
+        target="_blank"
+        class="group flex flex-col items-center gap-3 text-slate-400 hover:text-white transition">
+
+        <img src={`${import.meta.env.BASE_URL}logos/github.svg`}
+            class="h-8 opacity-70 group-hover:opacity-100 transition duration-300" />
+
+        <span class="text-sm">GitHub</span>
       </a>
 
-      <a href="https://www.linkedin.com/in/daniel-marek22"
-         target="_blank"
-         class="hover:text-white transition">
-        LinkedIn
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/daniel-marek22"
+        target="_blank"
+        class="group flex flex-col items-center gap-3 text-slate-400 hover:text-white transition">
+
+        <img src={`${import.meta.env.BASE_URL}logos/linkedin.svg`}
+            class="h-8 opacity-70 group-hover:opacity-100 transition duration-300" />
+
+        <span class="text-sm">LinkedIn</span>
       </a>
+
     </div>
+
   </section>
+
 
 </Layout>
