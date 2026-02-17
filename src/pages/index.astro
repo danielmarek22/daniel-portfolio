@@ -230,7 +230,7 @@ import.meta.env.BASE_URL
   </div>
 
   <!-- PROJECTS PREVIEW -->
-  <section class="py-32 px-6 max-w-6xl mx-auto">
+  <section class="py-36 px-6 max-w-[1400px] mx-auto">
 
   <div class="flex items-center justify-between mb-20">
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
@@ -340,69 +340,150 @@ import.meta.env.BASE_URL
     <div class="h-px bg-gradient-to-r from-transparent via-slate-600/40 to-transparent"></div>
   </div>
 
-<section class="py-32 px-6 max-w-6xl mx-auto">
+<section class="py-36 px-6 max-w-[1400px] mx-auto">
 
-  <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-16">
+  <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-100 mb-24">
     Technical Stack
   </h2>
 
-  <div class="grid md:grid-cols-2 gap-12">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
 
     <!-- Machine Learning -->
-    <div class="group p-8 rounded-2xl border border-slate-800 bg-slate-900/40
-                transition duration-500 hover:border-slate-600">
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(56,189,248,0.12)]">
 
-      <h3 class="text-lg font-medium text-slate-200 mb-6">
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
         Machine Learning
       </h3>
 
-      <div class="flex flex-wrap gap-6 items-center">
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/pytorch.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">PyTorch</span>
-        </div>
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/tensorflow.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">TensorFlow</span>
-        </div>
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/mlflow.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">MLflow</span>
-        </div>
-
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/pytorch.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/tensorflow.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/sklearn.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/lightning.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/opencv.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/ollama.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
       </div>
-
     </div>
 
-    <!-- Systems & Deployment -->
-    <div class="group p-8 rounded-2xl border border-slate-800 bg-slate-900/40
-                transition duration-500 hover:border-slate-600">
 
-      <h3 class="text-lg font-medium text-slate-200 mb-6">
+    <!-- Data Analysis -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(139,92,246,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-purple-500/10 to-indigo-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Data Analysis
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/pandas.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/numpy.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/matplotlib.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
+    </div>
+
+
+    <!-- Web Development -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(34,197,94,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-green-500/10 to-emerald-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Web Development
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/django.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/flask.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/sqlite.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
+    </div>
+
+
+    <!-- Programming -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(249,115,22,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-orange-500/10 to-yellow-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Programming
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/python.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/cpp.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/java.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/ros.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
+    </div>
+
+
+    <!-- Systems & Deployment -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(59,130,246,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-blue-500/10 to-slate-500/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
         Systems & Deployment
       </h3>
 
-      <div class="flex flex-wrap gap-6 items-center">
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/docker.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">Docker</span>
-        </div>
-
-        <div class="flex items-center gap-3 opacity-70 group-hover:opacity-100 transition">
-          <img src={`${import.meta.env.BASE_URL}logos/ros.svg`} class="h-6" />
-          <span class="text-sm text-slate-300">ROS</span>
-        </div>
-
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/docker.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/jenkins.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/git.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/linux.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+        <img src={`${import.meta.env.BASE_URL}logos/mlflow.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
       </div>
+    </div>
 
+
+    <!-- Cloud -->
+    <div class="group relative p-10 rounded-3xl border border-slate-800
+                bg-slate-900/40 backdrop-blur-sm
+                transition duration-500
+                hover:-translate-y-3 hover:border-slate-600
+                hover:shadow-[0_0_40px_rgba(245,158,11,0.12)]">
+
+      <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+                  transition duration-500 bg-gradient-to-br from-amber-500/10 to-orange-600/10"></div>
+
+      <h3 class="relative text-xl font-semibold text-slate-200 mb-10">
+        Cloud
+      </h3>
+
+      <div class="relative grid grid-cols-3 gap-10 items-center">
+        <img src={`${import.meta.env.BASE_URL}logos/aws.svg`} class="h-12 mx-auto opacity-80 group-hover:opacity-100 transition" />
+      </div>
     </div>
 
   </div>
-
 </section>
 
   <!-- Divider -->
