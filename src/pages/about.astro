@@ -1,136 +1,98 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const intro = [
+  "I am a machine learning engineer specializing in computer vision and autonomous systems, with a focus on applications in robotics and space technologies.",
+  "My work combines research-driven deep learning development with practical system deployment, including synthetic data generation, model optimization, and on-board AI pipelines.",
+  "I am particularly interested in intelligent perception systems for planetary exploration and remote sensing applications.",
+];
+
+const experience = [
+  {
+    role: "Machine Learning Engineer · KP Labs",
+    period: "2023 - Present",
+    summary:
+      "Developing deep learning systems for space-oriented applications, including synthetic data generation, foundation model adaptation, and multispectral remote sensing pipelines.",
+  },
+  {
+    role: "Research Intern · Polish Academy of Sciences",
+    period: "2020 - 2023",
+    summary:
+      "Developed simulation software and machine learning algorithms to improve indoor localization accuracy and contributed to scientific publications.",
+  },
+];
+
+const education = [
+  {
+    degree: "M.Sc. in Computer Science · Silesian University of Technology",
+    period: "2019 - 2024",
+    summary:
+      "Specialization in Data Engineering and Information Systems. Recipient of Rector's Scholarship for Academic Excellence (2023-2024).",
+  },
+  {
+    degree: "B.Sc. in Computer Science · Silesian University of Technology",
+    period: "2019 - 2023",
+    summary: "Specialization in Computer Software and Graphics.",
+  },
+];
 ---
 
-<Layout title="About – Daniel Marek">
+<Layout title="About - Daniel Marek">
+  <section class="mx-auto max-w-5xl px-6 py-32">
+    <h1 class="mb-16 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">About</h1>
 
-  <section class="py-32 px-6 max-w-5xl mx-auto">
-
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100 mb-16">
-      About
-    </h1>
-
-    <div class="space-y-8 text-slate-400 leading-relaxed max-w-3xl">
-      <p>
-        I am a machine learning engineer specializing in computer vision and autonomous systems,
-        with a focus on applications in robotics and space technologies.
-      </p>
-
-      <p>
-        My work combines research-driven deep learning development with practical system deployment,
-        including synthetic data generation, model optimization, and on-board AI pipelines.
-      </p>
-
-      <p>
-        I am particularly interested in intelligent perception systems for planetary exploration
-        and remote sensing applications.
-      </p>
+    <div class="max-w-3xl space-y-8 leading-relaxed text-slate-400">
+      {
+        intro.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))
+      }
     </div>
-
   </section>
 
-
-  <!-- Divider -->
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="mx-auto max-w-6xl px-6">
     <div class="h-px bg-slate-800"></div>
   </div>
 
-
-  <!-- EXPERIENCE -->
-  <section class="py-32 px-6 max-w-5xl mx-auto">
-
-    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-16">
-      Experience
-    </h2>
+  <section class="mx-auto max-w-5xl px-6 py-32">
+    <h2 class="mb-16 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">Experience</h2>
 
     <div class="space-y-20">
+      {
+        experience.map((item) => (
+          <div>
+            <div class="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
+              <p class="font-medium text-slate-200">{item.role}</p>
+              <p class="text-sm text-slate-500">{item.period}</p>
+            </div>
 
-      <div>
-        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2">
-          <p class="text-slate-200 font-medium">
-            Machine Learning Engineer · KP Labs
-          </p>
-          <p class="text-slate-500 text-sm">
-            2023 – Present
-          </p>
-        </div>
-
-        <p class="text-slate-400 mt-4 leading-relaxed max-w-3xl">
-          Developing deep learning systems for space-oriented applications,
-          including synthetic data generation, foundation model adaptation,
-          and multispectral remote sensing pipelines.
-        </p>
-      </div>
-
-      <div>
-        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2">
-          <p class="text-slate-200 font-medium">
-            Research Intern · Polish Academy of Sciences
-          </p>
-          <p class="text-slate-500 text-sm">
-            2020 – 2023
-          </p>
-        </div>
-
-        <p class="text-slate-400 mt-4 leading-relaxed max-w-3xl">
-          Developed simulation software and machine learning algorithms
-          to improve indoor localization accuracy and contributed to scientific publications.
-        </p>
-      </div>
-
+            <p class="mt-4 max-w-3xl leading-relaxed text-slate-400">{item.summary}</p>
+          </div>
+        ))
+      }
     </div>
-
   </section>
 
-
-  <!-- Divider -->
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="mx-auto max-w-6xl px-6">
     <div class="h-px bg-slate-800"></div>
   </div>
 
-
-  <!-- EDUCATION -->
-  <section class="py-32 px-6 max-w-5xl mx-auto">
-
-    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-16">
-      Education
-    </h2>
+  <section class="mx-auto max-w-5xl px-6 py-32">
+    <h2 class="mb-16 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">Education</h2>
 
     <div class="space-y-20">
+      {
+        education.map((item) => (
+          <div>
+            <div class="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
+              <p class="font-medium text-slate-200">{item.degree}</p>
+              <p class="text-sm text-slate-500">{item.period}</p>
+            </div>
 
-      <div>
-        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2">
-          <p class="text-slate-200 font-medium">
-            M.Sc. in Computer Science · Silesian University of Technology
-          </p>
-          <p class="text-slate-500 text-sm">
-            2019 – 2024
-          </p>
-        </div>
-
-        <p class="text-slate-400 mt-4 leading-relaxed max-w-3xl">
-          Specialization in Data Engineering and Information Systems.
-          Recipient of Rector’s Scholarship for Academic Excellence (2023–2024).
-        </p>
-      </div>
-
-      <div>
-        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2">
-          <p class="text-slate-200 font-medium">
-            B.Sc. in Computer Science · Silesian University of Technology
-          </p>
-          <p class="text-slate-500 text-sm">
-            2019 – 2023
-          </p>
-        </div>
-
-        <p class="text-slate-400 mt-4 leading-relaxed max-w-3xl">
-          Specialization in Computer Software and Graphics.
-        </p>
-      </div>
-
+            <p class="mt-4 max-w-3xl leading-relaxed text-slate-400">{item.summary}</p>
+          </div>
+        ))
+      }
     </div>
-
   </section>
-
 </Layout>

@@ -1,7 +1,14 @@
 ---
 import "../styles/global.css";
 const { title = "Daniel Marek" } = Astro.props;
-import.meta.env.BASE_URL
+const baseUrl = import.meta.env.BASE_URL;
+const navLinks = [
+  { href: "", label: "Home" },
+  { href: "about", label: "About" },
+  { href: "projects", label: "Projects" },
+  { href: "papers", label: "Publications" },
+  { href: "achievements", label: "Achievements" },
+];
 ---
 
 
@@ -11,86 +18,93 @@ import.meta.env.BASE_URL
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-<body class="relative bg-[#0b1020] text-slate-200 font-sans overflow-x-hidden">
-
-  <!-- Background glow -->
-  <div class="pointer-events-none fixed inset-0 z-0">
-    <div class="absolute top-[-20%] left-[-10%] w-[800px] h-[800px]
-                bg-cyan-500/25 rounded-full blur-[150px]
-                drift-slow"></div>
-
-    <div class="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px]
-                bg-blue-600/20 rounded-full blur-[150px]
-                drift-slower"></div>
-  </div>
-
-  <!-- NAVIGATION -->
-  <header class="fixed top-0 left-0 w-full z-20 backdrop-blur-md bg-slate-900/60 border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-
-      <span class="text-sm tracking-wide text-slate-300">
-        Daniel Marek
-      </span>
-
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-6 text-sm text-slate-400">
-        <a href={`${import.meta.env.BASE_URL}`} class="hover:text-white transition">Home</a>
-        <a href={`${import.meta.env.BASE_URL}about`} class="hover:text-white transition">About</a>
-        <a href={`${import.meta.env.BASE_URL}projects`} class="hover:text-white transition">Projects</a>
-        <a href={`${import.meta.env.BASE_URL}papers`} class="hover:text-white transition">Publications</a>
-        <a href={`${import.meta.env.BASE_URL}achievements`} class="hover:text-white transition">Achievements</a>
-      </nav>
-
-      <!-- Mobile Button -->
-      <button id="menu-btn" class="md:hidden text-slate-300">
-        ☰
-      </button>
-
+  <body class="relative overflow-x-hidden bg-[#0b1020] font-sans text-slate-200">
+    <!-- Background glow -->
+    <div class="pointer-events-none fixed inset-0 z-0">
+      <div
+        class="drift-slow absolute left-[-10%] top-[-20%] h-[800px] w-[800px] rounded-full bg-cyan-500/25 blur-[150px]"
+      >
+      </div>
+      <div
+        class="drift-slower absolute bottom-[-20%] right-[-10%] h-[700px] w-[700px] rounded-full bg-blue-600/20 blur-[150px]"
+      >
+      </div>
     </div>
-  </header>
 
-    <!-- Mobile Menu -->
-  <div id="mobile-menu"
-      class="hidden fixed top-16 left-0 w-full bg-slate-900/95 backdrop-blur-md border-b border-slate-800 md:hidden z-20">
+    <!-- Navigation -->
+    <header
+      class="fixed left-0 top-0 z-20 w-full border-b border-slate-800 bg-slate-900/60 backdrop-blur-md"
+    >
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <span class="text-sm tracking-wide text-slate-300">Daniel Marek</span>
 
-    <div class="flex flex-col px-6 py-6 space-y-4 text-slate-300">
+        <nav class="hidden space-x-6 text-sm text-slate-400 md:flex">
+          {
+            navLinks.map(({ href, label }) => (
+              <a href={`${baseUrl}${href}`} class="transition hover:text-white">
+                {label}
+              </a>
+            ))
+          }
+        </nav>
 
-      <a href={`${import.meta.env.BASE_URL}`} class="hover:text-white transition">Home</a>
-      <a href={`${import.meta.env.BASE_URL}about`} class="hover:text-white transition">About</a>
-      <a href={`${import.meta.env.BASE_URL}projects`} class="hover:text-white transition">Projects</a>
-      <a href={`${import.meta.env.BASE_URL}papers`} class="hover:text-white transition">Publications</a>
-      <a href={`${import.meta.env.BASE_URL}achievements`} class="hover:text-white transition">Achievements</a>
+        <button
+          id="menu-btn"
+          class="text-slate-300 md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
 
+    <div
+      id="mobile-menu"
+      class="fixed left-0 top-16 z-20 hidden w-full border-b border-slate-800 bg-slate-900/95 backdrop-blur-md md:hidden"
+    >
+      <div class="flex flex-col space-y-4 px-6 py-6 text-slate-300">
+        {
+          navLinks.map(({ href, label }) => (
+            <a href={`${baseUrl}${href}`} class="transition hover:text-white">
+              {label}
+            </a>
+          ))
+        }
+      </div>
     </div>
-  </div>
 
+    <main class="relative z-10">
+      <slot />
+    </main>
 
-  <!-- MAIN CONTENT -->
-  <main class="relative z-10">
-    <slot />
-  </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        if (!btn || !menu) return;
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("menu-btn");
-      const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => {
+          const isHidden = menu.classList.toggle("hidden");
+          btn.setAttribute("aria-expanded", String(!isHidden));
+        });
 
-      if (!btn || !menu) return;
-
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+        menu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          });
+        });
       });
-    });
-  </script>
-
-
-
-</body>
+    </script>
+  </body>
 </html>
-

@@ -1,126 +1,83 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const sections = [
+  {
+    title: "Awards",
+    items: [
+      {
+        name: "3rd Place · Polish Space Agency Thesis Competition",
+        details: "For work on obstacle detection using machine learning.",
+      },
+      {
+        name: "3rd Place · Trumpf Huettinger Engineering Thesis Competition",
+        details: "For work on rock segmentation.",
+      },
+    ],
+  },
+  {
+    title: "Programs & Scholarships",
+    items: [
+      {
+        name: "Finalist · Polish Space Fellowship Program",
+      },
+      {
+        name: "Rector's Scholarship for Academic Excellence",
+        details: "Silesian University of Technology · 2023-2024",
+      },
+    ],
+  },
+  {
+    title: "Certifications",
+    items: [
+      {
+        name: "LanguageCert Test of English · C2 Proficiency",
+      },
+      {
+        name: "AgilePM® Foundation",
+      },
+    ],
+  },
+  {
+    title: "Conferences",
+    items: [
+      {
+        name: "Speaker · Gekkon 2024",
+        details: "\"Łaziki Planetarne na Przestrzeni Dekad: Jak AI Zmienia Eksplorację Kosmiczną\"",
+      },
+      {
+        name: "Co-organizer · In@Security 2025",
+      },
+    ],
+  },
+];
 ---
 
-<Layout title="Achievements – Daniel Marek">
-
-  <section class="py-32 px-6 max-w-5xl mx-auto">
-
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100 mb-20">
+<Layout title="Achievements - Daniel Marek">
+  <section class="mx-auto max-w-5xl px-6 py-32">
+    <h1 class="mb-20 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
       Achievements & Recognition
     </h1>
 
     <div class="space-y-24">
+      {
+        sections.map((section) => (
+          <section>
+            <h2 class="mb-10 text-2xl font-semibold text-slate-200">{section.title}</h2>
 
-      <!-- Awards -->
-      <div>
-        <h2 class="text-2xl font-semibold text-slate-200 mb-10">
-          Awards
-        </h2>
-
-        <div class="space-y-10">
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              3rd Place · Polish Space Agency Thesis Competition
-            </p>
-            <p class="text-slate-500 text-sm mt-1">
-              For work on obstacle detection using machine learning.
-            </p>
-          </div>
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              3rd Place · Trumpf Huettinger Engineering Thesis Competition
-            </p>
-            <p class="text-slate-500 text-sm mt-1">
-              For work on rock segmentation.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- Programs & Scholarships -->
-      <div>
-        <h2 class="text-2xl font-semibold text-slate-200 mb-10">
-          Programs & Scholarships
-        </h2>
-
-        <div class="space-y-10">
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              Finalist · Polish Space Fellowship Program
-            </p>
-          </div>
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              Rector’s Scholarship for Academic Excellence
-            </p>
-            <p class="text-slate-500 text-sm mt-1">
-              Silesian University of Technology · 2023–2024
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- Certifications -->
-      <div>
-        <h2 class="text-2xl font-semibold text-slate-200 mb-10">
-          Certifications
-        </h2>
-
-        <div class="space-y-10">
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              LanguageCert Test of English · C2 Proficiency
-            </p>
-          </div>
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              AgilePM® Foundation
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-
-                <!-- Conferences -->
-      <div>
-        <h2 class="text-2xl font-semibold text-slate-200 mb-10">
-          Conferences
-        </h2>
-
-        <div class="space-y-10">
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              Speaker · Gekkon 2024
-            </p>
-            <p class="text-slate-500 text-sm mt-1">
-              "Łaziki Planetarne na Przestrzeni Dekad: Jak AI Zmienia Eksplorację Kosmiczną"
-            </p>
-          </div>
-
-          <div>
-            <p class="text-slate-200 font-medium">
-              Co-organizer · In@Security 2025
-            </p>
-          </div>
-
-        </div>
-      </div>
-
+            <div class="space-y-10">
+              {
+                section.items.map((item) => (
+                  <div>
+                    <p class="font-medium text-slate-200">{item.name}</p>
+                    {item.details && <p class="mt-1 text-sm text-slate-500">{item.details}</p>}
+                  </div>
+                ))
+              }
+            </div>
+          </section>
+        ))
+      }
     </div>
-
   </section>
-
 </Layout>

@@ -1,94 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const papers = [
+  {
+    title: "End-to-End Deep Learning Pipeline for On-Board Extraterrestrial Rock Segmentation",
+    authors: "Daniel Marek, Jakub Nalepa",
+    venue: "Engineering Applications of Artificial Intelligence · Elsevier · 2024",
+    summary:
+      "Proposed and evaluated a complete deep learning pipeline for lunar surface segmentation, optimized for on-board inference in resource-constrained space systems.",
+    url: "https://www.sciencedirect.com/science/article/pii/S0952197623014951",
+  },
+  {
+    title: "Channel State Information Variability in BLE Positioning Measurements",
+    authors: "Daniel Marek, Krzysztof Grochla, Jakub Duda",
+    venue: "28th International Conference on Systems Engineering (ICSEng) · 2021",
+    summary:
+      "Analysis of signal variability in BLE-based positioning systems, contributing to improved indoor localization accuracy and system robustness.",
+    url: "https://link.springer.com/chapter/10.1007/978-3-030-92604-5_26",
+  },
+];
 ---
 
-<Layout title="Publications – Daniel Marek">
-
-  <section class="py-32 px-6 max-w-5xl mx-auto">
-
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100 mb-20">
-      Publications
-    </h1>
+<Layout title="Publications - Daniel Marek">
+  <section class="mx-auto max-w-5xl px-6 py-32">
+    <h1 class="mb-20 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">Publications</h1>
 
     <div class="space-y-24">
+      {
+        papers.map((paper) => (
+          <article>
+            <h2 class="text-xl font-semibold leading-snug text-slate-200 md:text-2xl">{paper.title}</h2>
 
-      <!-- Paper 1 -->
-      <div>
-        <h2 class="text-xl md:text-2xl font-semibold text-slate-200 leading-snug">
-          End-to-End Deep Learning Pipeline for On-Board Extraterrestrial Rock Segmentation
-        </h2>
+            <p class="mt-3 text-sm text-slate-500">
+              <span class="font-medium text-slate-300">{paper.authors}</span>
+            </p>
 
-        <p class="text-slate-500 mt-3 text-sm">
-          <span class="text-slate-300 font-medium">Daniel Marek</span>, Jakub Nalepa
-        </p>
+            <p class="mt-1 text-sm text-slate-500">{paper.venue}</p>
 
-        <p class="text-slate-500 text-sm mt-1">
-          Engineering Applications of Artificial Intelligence · Elsevier · 2024
-        </p>
+            <p class="mt-6 max-w-3xl leading-relaxed text-slate-400">{paper.summary}</p>
 
-        <p class="text-slate-400 mt-6 leading-relaxed max-w-3xl">
-          Proposed and evaluated a complete deep learning pipeline for lunar surface segmentation,
-          optimized for on-board inference in resource-constrained space systems.
-        </p>
-
-        <a href="https://www.sciencedirect.com/science/article/pii/S0952197623014951"
-           target="_blank"
-           class="inline-flex items-center gap-3 mt-8 px-6 py-3
-                  rounded-xl border border-slate-800
-                  bg-slate-900/40 backdrop-blur-sm
-                  hover:border-slate-600 hover:bg-slate-800/60
-                  transition duration-300 group">
-
-          <span class="text-slate-300 group-hover:text-white transition">
-            Read publication
-          </span>
-
-          <span class="transition-transform group-hover:translate-x-1">
-            ↗
-          </span>
-        </a>
-      </div>
-
-
-      <!-- Paper 2 -->
-      <div>
-        <h2 class="text-xl md:text-2xl font-semibold text-slate-200 leading-snug">
-          Channel State Information Variability in BLE Positioning Measurements
-        </h2>
-
-        <p class="text-slate-500 mt-3 text-sm">
-          <span class="text-slate-300 font-medium">Daniel Marek</span>, Krzysztof Grochla, Jakub Duda
-        </p>
-
-        <p class="text-slate-500 text-sm mt-1">
-          28th International Conference on Systems Engineering (ICSEng) · 2021
-        </p>
-
-        <p class="text-slate-400 mt-6 leading-relaxed max-w-3xl">
-          Analysis of signal variability in BLE-based positioning systems,
-          contributing to improved indoor localization accuracy and system robustness.
-        </p>
-
-        <a href="https://link.springer.com/chapter/10.1007/978-3-030-92604-5_26"
-           target="_blank"
-           class="inline-flex items-center gap-3 mt-8 px-6 py-3
-                  rounded-xl border border-slate-800
-                  bg-slate-900/40 backdrop-blur-sm
-                  hover:border-slate-600 hover:bg-slate-800/60
-                  transition duration-300 group">
-
-          <span class="text-slate-300 group-hover:text-white transition">
-            Read publication
-          </span>
-
-          <span class="transition-transform group-hover:translate-x-1">
-            ↗
-          </span>
-        </a>
-      </div>
-
+            <a
+              href={paper.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group mt-8 inline-flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-3 backdrop-blur-sm transition duration-300 hover:border-slate-600 hover:bg-slate-800/60"
+            >
+              <span class="text-slate-300 transition group-hover:text-white">Read publication</span>
+              <span class="transition-transform group-hover:translate-x-1">↗</span>
+            </a>
+          </article>
+        ))
+      }
     </div>
-
   </section>
-
 </Layout>
