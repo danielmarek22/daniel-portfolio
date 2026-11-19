@@ -1,4 +1,5 @@
 ---
+import ProjectDetails from "../components/ProjectDetails.astro";
 import Layout from "../layouts/Layout.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -69,20 +70,7 @@ const linkClass =
     <div class="space-y-28">
       {
         industrialProjects.map((project) => (
-          <article>
-            <h2 class="text-2xl font-semibold text-slate-200 md:text-3xl">{project.title}</h2>
-            <p class="mt-2 text-sm text-slate-500">{project.period}</p>
-
-            <div class="mt-6 max-w-3xl space-y-6 leading-relaxed text-slate-400">
-              {
-                project.paragraphs.map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))
-              }
-            </div>
-
-            <p class="mt-6 text-sm text-slate-500">{project.stack}</p>
-
+          <ProjectDetails project={project}>
             <a
               href={project.external.href}
               target="_blank"
@@ -92,7 +80,7 @@ const linkClass =
               {project.external.label}
               <span>↗</span>
             </a>
-          </article>
+          </ProjectDetails>
         ))
       }
     </div>
@@ -110,20 +98,7 @@ const linkClass =
     <div class="space-y-28">
       {
         researchProjects.map((project) => (
-          <article>
-            <h2 class="text-2xl font-semibold text-slate-200 md:text-3xl">{project.title}</h2>
-            <p class="mt-2 text-sm text-slate-500">{project.period}</p>
-
-            <div class="mt-6 max-w-3xl space-y-6 leading-relaxed text-slate-400">
-              {
-                project.paragraphs.map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))
-              }
-            </div>
-
-            <p class="mt-6 text-sm text-slate-500">{project.stack}</p>
-
+          <ProjectDetails project={project}>
             <a href={project.repo} target="_blank" rel="noopener noreferrer" class={linkClass}>
               <img
                 src={`${baseUrl}logos/github.svg`}
@@ -132,7 +107,7 @@ const linkClass =
               />
               <span class="text-slate-300 transition group-hover:text-white">View on GitHub</span>
             </a>
-          </article>
+          </ProjectDetails>
         ))
       }
     </div>
