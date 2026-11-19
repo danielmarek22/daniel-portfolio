@@ -14,10 +14,9 @@ const papers = [
   {
     title: "Deep Learning for Ex-Terrestrial Rock Segmentation",
     authors: "Daniel Marek, Jakub Nalepa",
-    venue: "Neural Network Technologies and Their Applications (NNTA 2024) · Conference proceedings",
+    venue: "Neural Network Technologies and Their Applications (NNTA 2024) · Conference proceedings · pp. 178–180",
     summary:
       "Examined model compression and the effects of simulated image degradation on rock segmentation for on-board deployment.",
-    url: "https://www.dgma.donetsk.ua/docs/news/2024/%D0%97%D0%B1%D1%96%D1%80%D0%BD%D0%B8%D0%BA%20NNTA-2024.pdf",
   },
   {
     title: "Channel State Information Variability in BLE Positioning Measurements",
@@ -55,15 +54,17 @@ const papers = [
 
             <p class="mt-6 max-w-3xl leading-relaxed text-slate-400">{paper.summary}</p>
 
-            <a
-              href={paper.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group mt-8 inline-flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-3 backdrop-blur-sm transition duration-300 hover:border-slate-600 hover:bg-slate-800/60"
-            >
-              <span class="text-slate-300 transition group-hover:text-white">Read publication</span>
-              <span class="transition-transform group-hover:translate-x-1">↗</span>
-            </a>
+            {paper.url && (
+              <a
+                href={paper.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group mt-8 inline-flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-3 backdrop-blur-sm transition duration-300 hover:border-slate-600 hover:bg-slate-800/60"
+              >
+                <span class="text-slate-300 transition group-hover:text-white">Read publication</span>
+                <span class="transition-transform group-hover:translate-x-1">↗</span>
+              </a>
+            )}
           </article>
         ))
       }
