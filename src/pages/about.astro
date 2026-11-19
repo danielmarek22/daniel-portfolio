@@ -2,17 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 
 const intro = [
-  "I am a machine learning engineer specializing in computer vision and autonomous systems, with a focus on applications in robotics and space technologies.",
-  "My work combines research-driven deep learning development with practical system deployment, including synthetic data generation, model optimization, and on-board AI pipelines.",
-  "I am particularly interested in intelligent perception systems for planetary exploration and remote sensing applications.",
+  "I am an AI and autonomous systems engineer working across machine learning, computer vision, and robotic perception. I develop complete systems, from research and algorithm development to software integration, evaluation, and deployment.",
+  "My work spans Earth observation and robotics, with a focus on on-board inference under tight compute and memory constraints. I am also interested in how autonomous agents use persistent memory and planning, and how those capabilities fit into the software systems that run them.",
 ];
 
 const experience = [
   {
     role: "Machine Learning Engineer · KP Labs",
-    period: "2023 - Present",
+    period: "2023–Present",
     summary:
-      "Developing deep learning systems for space-oriented applications, including synthetic data generation, foundation model adaptation, and multispectral remote sensing pipelines.",
+      "Developing and evaluating deep learning models for Earth observation and remote sensing, including methane detection and segmentation in satellite imagery. My work also includes computer vision and robotic perception.",
   },
   {
     role: "Research Intern · Polish Academy of Sciences",
@@ -23,6 +22,14 @@ const experience = [
 ];
 
 const education = [
+  {
+    degree: "Industrial PhD Researcher",
+    period: "2026–Present",
+    institution:
+      "Institute of Theoretical and Applied Informatics, Polish Academy of Sciences (IITiS PAN), in cooperation with Silesian University of Technology.",
+    summary:
+      "Research area: Artificial Intelligence for Autonomous Space Systems. I study machine learning methods that support perception, intelligent decision-making, and autonomous operation in space systems.",
+  },
   {
     degree: "M.Sc. in Computer Science · Silesian University of Technology",
     period: "2019 - 2024",
@@ -37,7 +44,10 @@ const education = [
 ];
 ---
 
-<Layout title="About - Daniel Marek">
+<Layout
+  title="About - Daniel Marek"
+  description="Daniel Marek is a machine learning engineer at KP Labs and an industrial PhD researcher in AI for autonomous space systems."
+>
   <section class="mx-auto max-w-5xl px-6 py-32">
     <h1 class="mb-16 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">About</h1>
 
@@ -89,6 +99,7 @@ const education = [
               <p class="text-sm text-slate-500">{item.period}</p>
             </div>
 
+            {item.institution && <p class="mt-4 max-w-3xl text-sm text-slate-400">{item.institution}</p>}
             <p class="mt-4 max-w-3xl leading-relaxed text-slate-400">{item.summary}</p>
           </div>
         ))
