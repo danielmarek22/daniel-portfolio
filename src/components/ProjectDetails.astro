@@ -1,0 +1,27 @@
+---
+interface Props {
+  project: {
+    title: string;
+    subtitle?: string;
+    period: string;
+    paragraphs: string[];
+    stack: string;
+  };
+}
+
+const { title, subtitle, period, paragraphs, stack } = Astro.props.project;
+---
+
+<article>
+  <h2 class="text-2xl font-semibold text-slate-200 md:text-3xl">{title}</h2>
+  {subtitle && <p class="mt-2 text-slate-300">{subtitle}</p>}
+  <p class="mt-2 text-sm text-slate-500">{period}</p>
+
+  <div class="mt-6 max-w-3xl space-y-6 leading-relaxed text-slate-400">
+    {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+
+  <p class="mt-6 text-sm text-slate-500">{stack}</p>
+
+  <slot />
+</article>

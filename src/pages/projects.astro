@@ -1,20 +1,33 @@
 ---
+import ProjectDetails from "../components/ProjectDetails.astro";
 import Layout from "../layouts/Layout.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 
 const industrialProjects = [
   {
-    title: "FAST-EO - Foundation Models for Earth Observation",
-    period: "European Space Agency · 2023 - Present",
+    title: "FAST-EO · Foundation Models for Earth Observation",
+    period: "KP Labs · ESA Φ-lab · 2024–2025",
     paragraphs: [
-      "Contribution to the development of foundation-model-based pipelines for multispectral Earth observation data processing.",
-      "Work focused on dataset preparation, model adaptation, and methane super-emitter detection using satellite imagery.",
+      "Contributed to adapting foundation models for multispectral Earth observation imagery at KP Labs.",
+      "Prepared datasets and adapted models for detecting methane emissions in satellite imagery.",
     ],
     stack: "Python · PyTorch · Multispectral Data · Foundation Models",
     external: {
       label: "Project Website",
       href: "https://www.fast-eo.eu/",
+    },
+  },
+  {
+    title: "Simulated PhiSat-2 Methane Benchmark Dataset",
+    period: "2025",
+    paragraphs: [
+      "Co-authored a public methane detection benchmark based on simulated PhiSat-2 imagery derived from AVIRIS-NG hyperspectral data.",
+    ],
+    stack: "Earth Observation · Hyperspectral Data · Synthetic Imagery",
+    external: {
+      label: "View Dataset",
+      href: "https://doi.org/10.5281/zenodo.14900454",
     },
   },
 ];
@@ -56,33 +69,44 @@ const researchProjects = [
   },
 ];
 
+const astra = {
+  title: "Project Astra",
+  subtitle: "Local Autonomous AI Agent",
+  period: "Active Development",
+  paragraphs: [
+    "An experimental local AI agent combining persistent memory, tool use, autonomous workflows, and multimodal interaction in a modular architecture.",
+  ],
+  stack: "Python · Local LLMs · Agent Architecture · Memory Systems",
+  docsUrl: "https://danielmarek22.github.io/astra-demo/",
+};
+
+const elara = {
+  title: "ELARA",
+  period: "Early-stage R&D",
+  paragraphs: [
+    "The current prototype uses spacecraft simulation to study how AI agents make tasking decisions under resource constraints.",
+    "The longer-term research explores how agent-based AI could support autonomous space operations and assist crews with tasks and decisions.",
+  ],
+  stack: "Python · Basilisk · BSK-RL · Local LLMs",
+};
+
 const linkClass =
   "group mt-8 inline-flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-3 backdrop-blur-sm transition duration-300 hover:border-slate-600 hover:bg-slate-800/60";
 ---
 
-<Layout title="Projects - Daniel Marek">
+<Layout
+  title="Projects - Daniel Marek"
+  description="Daniel Marek's industrial and academic research in Earth observation and robotics, and independent R&D on Project Astra and ELARA."
+>
   <section class="mx-auto max-w-5xl px-6 pb-20 pt-32">
     <h1 class="mb-20 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
-      ESA & Industrial Research Projects
+      Industrial & Space Research
     </h1>
 
     <div class="space-y-28">
       {
         industrialProjects.map((project) => (
-          <article>
-            <h2 class="text-2xl font-semibold text-slate-200 md:text-3xl">{project.title}</h2>
-            <p class="mt-2 text-sm text-slate-500">{project.period}</p>
-
-            <div class="mt-6 max-w-3xl space-y-6 leading-relaxed text-slate-400">
-              {
-                project.paragraphs.map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))
-              }
-            </div>
-
-            <p class="mt-6 text-sm text-slate-500">{project.stack}</p>
-
+          <ProjectDetails project={project}>
             <a
               href={project.external.href}
               target="_blank"
@@ -92,7 +116,34 @@ const linkClass =
               {project.external.label}
               <span>↗</span>
             </a>
-          </article>
+          </ProjectDetails>
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-6">
+    <div class="my-24 h-px bg-slate-800"></div>
+  </div>
+
+  <section class="mx-auto max-w-5xl px-6 pb-20 pt-20">
+    <h1 class="mb-20 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
+      Academic Research
+    </h1>
+
+    <div class="space-y-28">
+      {
+        researchProjects.map((project) => (
+          <ProjectDetails project={project}>
+            <a href={project.repo} target="_blank" rel="noopener noreferrer" class={linkClass}>
+              <img
+                src={`${baseUrl}logos/github.svg`}
+                alt="GitHub logo"
+                class="h-5 opacity-70 transition group-hover:opacity-100"
+              />
+              <span class="text-slate-300 transition group-hover:text-white">View on GitHub</span>
+            </a>
+          </ProjectDetails>
         ))
       }
     </div>
@@ -104,37 +155,17 @@ const linkClass =
 
   <section class="mx-auto max-w-5xl px-6 pb-32 pt-20">
     <h1 class="mb-20 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
-      Selected Research Projects
+      Independent R&D
     </h1>
 
     <div class="space-y-28">
-      {
-        researchProjects.map((project) => (
-          <article>
-            <h2 class="text-2xl font-semibold text-slate-200 md:text-3xl">{project.title}</h2>
-            <p class="mt-2 text-sm text-slate-500">{project.period}</p>
-
-            <div class="mt-6 max-w-3xl space-y-6 leading-relaxed text-slate-400">
-              {
-                project.paragraphs.map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))
-              }
-            </div>
-
-            <p class="mt-6 text-sm text-slate-500">{project.stack}</p>
-
-            <a href={project.repo} target="_blank" rel="noopener noreferrer" class={linkClass}>
-              <img
-                src={`${baseUrl}logos/github.svg`}
-                alt="GitHub logo"
-                class="h-5 opacity-70 transition group-hover:opacity-100"
-              />
-              <span class="text-slate-300 transition group-hover:text-white">View on GitHub</span>
-            </a>
-          </article>
-        ))
-      }
+      <ProjectDetails project={astra}>
+        <a href={astra.docsUrl} target="_blank" rel="noopener noreferrer" class={linkClass}>
+          <span class="text-slate-300 transition group-hover:text-white">Technical Documentation</span>
+          <span class="transition-transform group-hover:translate-x-1">↗</span>
+        </a>
+      </ProjectDetails>
+      <ProjectDetails project={elara} />
     </div>
   </section>
 </Layout>
