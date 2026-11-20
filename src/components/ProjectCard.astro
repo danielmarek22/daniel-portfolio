@@ -1,0 +1,95 @@
+---
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+}
+
+const {
+  title, subtitle, metadata, status, paragraphs, stages, recognition,
+  technologies, image, links, featured, layout,
+} = Astro.props.project;
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<article
+  class:list={[
+    "project-card",
+    featured && "project-card--featured",
+    image && (featured || layout === "horizontal") && "project-card--split",
+  ]}
+>
+  <div class="project-card__body">
+    {(metadata || status) && (
+      <p class="project-card__metadata">
+        {metadata && <span>{metadata}</span>}
+        {status && <span class="project-card__status">{status}</span>}
+      </p>
+    )}
+
+    <div class="project-card__heading">
+      <h3>{title}</h3>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
+
+    {paragraphs && paragraphs.length > 0 && (
+      <div class="project-card__description">
+        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    )}
+
+    {stages && stages.length > 0 && (
+      <ol class="project-card__stages" role="list" aria-label="Project stages">
+        {stages.map((stage) => (
+          <li>
+            <div class="project-card__stage-heading">
+              <h4>{stage.title}</h4>
+              <span>{stage.metadata}</span>
+            </div>
+            <p>{stage.description}</p>
+          </li>
+        ))}
+      </ol>
+    )}
+
+    {recognition && <p class="project-card__recognition">{recognition}</p>}
+
+    {technologies && technologies.length > 0 && (
+      <ul class="project-card__tags" role="list" aria-label="Technologies">
+        {technologies.map((technology) => <li>{technology}</li>)}
+      </ul>
+    )}
+
+    {links && links.length > 0 && (
+      <div class="project-card__links">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${link.label} for ${title} (opens in a new tab)`}
+          >
+            {link.label}
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true">
+              <path d="M4 12 12 4m-6 0h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+
+  {image && (
+    <figure class:list={["project-card__media", image.treatment && `project-card__media--${image.treatment}`]}>
+      <img
+        src={`${baseUrl}${image.src}`}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading="lazy"
+        decoding="async"
+      />
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  )}
+</article>

@@ -1,0 +1,156 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+// Responsive crops of the original public/profile.jpg portrait.
+const portrait = `${baseUrl}profile-560.webp`;
+const portraitLarge = `${baseUrl}profile-960.webp`;
+---
+
+<figure class="hero-portrait">
+  <svg
+    class="hero-portrait__orbits"
+    viewBox="0 0 560 520"
+    preserveAspectRatio="xMidYMid slice"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <g class="hero-portrait__references">
+      <path d="M24 260h512M280 24v472" stroke-dasharray="2 7" />
+      <circle cx="280" cy="260" r="200" stroke-dasharray="1 8" />
+      <path d="M32 88V66h22m452 0h22v22M32 432v22h22m452 0h22v-22" />
+    </g>
+
+    <g class="hero-portrait__tracks">
+      <ellipse cx="280" cy="260" rx="253" ry="114" transform="rotate(-28 280 260)" />
+      <ellipse cx="280" cy="260" rx="232" ry="139" transform="rotate(23 280 260)" />
+      <circle cx="488" cy="146" r="2.6" fill="#9ae1f6" stroke="none" />
+      <circle cx="69" cy="355" r="2.1" fill="#9ae1f6" stroke="none" />
+    </g>
+  </svg>
+
+  <div class="hero-portrait__frame">
+    <img
+      src={portrait}
+      srcset={`${portrait} 560w, ${portraitLarge} 960w`}
+      sizes="(min-width: 72rem) 22rem, (min-width: 56rem) 31vw, (min-width: 29rem) 22rem, calc(74vw - 1rem)"
+      width="560"
+      height="700"
+      alt="Daniel Marek seated outdoors"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+
+  <figcaption class="hero-portrait__caption">Daniel Marek</figcaption>
+</figure>
+
+<style>
+  .hero-portrait {
+    --portrait-width: min(calc(74% + 0.625rem), 22rem);
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 35rem;
+    justify-self: center;
+    padding-block: clamp(1rem, 2.5vw, 1.75rem);
+  }
+
+  .hero-portrait::before,
+  .hero-portrait__orbits {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .hero-portrait::before {
+    content: "";
+    background: radial-gradient(ellipse at 55% 47%, rgb(59 130 246 / 17%), transparent 68%);
+  }
+
+  .hero-portrait__references {
+    stroke: #709aca;
+    stroke-opacity: 0.21;
+  }
+
+  .hero-portrait__tracks {
+    stroke: #86c9f3;
+    stroke-opacity: 0.33;
+  }
+
+  .hero-portrait__frame,
+  .hero-portrait__caption {
+    width: var(--portrait-width);
+    margin-inline: auto;
+    border: 1px solid var(--folio-border);
+  }
+
+  .hero-portrait__frame {
+    position: relative;
+    border-bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+    background: var(--folio-surface);
+  }
+
+  .hero-portrait__frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+  }
+
+  .hero-portrait__frame::before,
+  .hero-portrait__frame::after {
+    position: absolute;
+    width: 1.15rem;
+    height: 1.15rem;
+    pointer-events: none;
+    content: "";
+  }
+
+  .hero-portrait__frame::before {
+    top: -0.5rem;
+    right: -0.5rem;
+    border-top: 1px solid #78accd;
+    border-right: 1px solid #78accd;
+    border-top-right-radius: 0.4rem;
+  }
+
+  .hero-portrait__frame::after {
+    bottom: -0.5rem;
+    left: -0.5rem;
+    border-bottom: 1px solid #78accd;
+    border-left: 1px solid #78accd;
+    border-bottom-left-radius: 0.4rem;
+  }
+
+  .hero-portrait__caption {
+    border-radius: 0 0 1rem 1rem;
+    padding: 0.7rem 0.95rem;
+    background: #101d30;
+    color: var(--folio-text);
+    font-size: 0.95rem;
+    font-weight: 650;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-portrait__tracks {
+      transform-origin: 280px 260px;
+      animation: portrait-traces 1.4s ease-out both;
+    }
+  }
+
+  @keyframes portrait-traces {
+    from {
+      opacity: 0.55;
+      transform: rotate(-4deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: rotate(0);
+    }
+  }
+</style>

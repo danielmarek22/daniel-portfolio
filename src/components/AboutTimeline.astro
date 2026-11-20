@@ -1,0 +1,29 @@
+---
+interface Props {
+  entries: readonly {
+    title: string;
+    organization: string;
+    period: string;
+    summary: string;
+    status?: string;
+  }[];
+}
+
+const { entries } = Astro.props;
+---
+
+<ol class="about-timeline" role="list">
+  {entries.map(({ title, organization, period, summary, status }) => (
+    <li class:list={["about-timeline__item", status && "about-timeline__item--ongoing"]}>
+      <div class="about-timeline__when">
+        <span class="about-timeline__period">{period}</span>
+        {status && <span class="about-timeline__status">{status}</span>}
+      </div>
+      <div class="about-timeline__entry">
+        <h3>{title}</h3>
+        <p class="about-timeline__organization">{organization}</p>
+        <p class="about-timeline__summary">{summary}</p>
+      </div>
+    </li>
+  ))}
+</ol>

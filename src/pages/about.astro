@@ -1,5 +1,9 @@
 ---
+import AboutTimeline from "../components/AboutTimeline.astro";
 import Layout from "../layouts/Layout.astro";
+import "../styles/about.css";
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const intro = [
   "I am an AI and autonomous systems engineer working across machine learning, computer vision, and robotic perception. I develop complete systems, from research and algorithm development to software integration, evaluation, and deployment.",
@@ -8,14 +12,16 @@ const intro = [
 
 const experience = [
   {
-    role: "Machine Learning Engineer · KP Labs",
+    title: "Machine Learning Engineer",
+    organization: "KP Labs",
     period: "2023–Present",
     summary:
       "Developing and evaluating deep learning models for Earth observation and remote sensing, including methane detection and segmentation in satellite imagery. My work also includes computer vision and robotic perception.",
   },
   {
-    role: "Research Intern · Polish Academy of Sciences",
-    period: "2020 - 2023",
+    title: "Research Intern",
+    organization: "Polish Academy of Sciences",
+    period: "2020–2023",
     summary:
       "Developed simulation software and machine learning algorithms to improve indoor localization accuracy and contributed to scientific publications.",
   },
@@ -23,22 +29,25 @@ const experience = [
 
 const education = [
   {
-    degree: "Industrial PhD Researcher",
+    title: "Industrial PhD Researcher",
     period: "2026–Present",
-    institution:
+    status: "In progress",
+    organization:
       "Institute of Theoretical and Applied Informatics, Polish Academy of Sciences (IITiS PAN), in cooperation with Silesian University of Technology.",
     summary:
       "Research area: Artificial Intelligence for Autonomous Space Systems. I study machine learning methods that support perception, intelligent decision-making, and autonomous operation in space systems.",
   },
   {
-    degree: "M.Sc. in Computer Science · Silesian University of Technology",
-    period: "2019 - 2024",
+    title: "M.Sc. in Computer Science",
+    organization: "Silesian University of Technology",
+    period: "2019–2024",
     summary:
       "Specialization in Data Engineering and Information Systems. Recipient of Rector's Scholarship for Academic Excellence (2023-2024).",
   },
   {
-    degree: "B.Sc. in Computer Science · Silesian University of Technology",
-    period: "2019 - 2023",
+    title: "B.Sc. in Computer Science",
+    organization: "Silesian University of Technology",
+    period: "2019–2023",
     summary: "Specialization in Computer Software and Graphics.",
   },
 ];
@@ -47,63 +56,104 @@ const education = [
 <Layout
   title="About - Daniel Marek"
   description="Daniel Marek is a machine learning engineer at KP Labs and an industrial PhD researcher in AI for autonomous space systems."
+  orbitalTheme
 >
-  <section class="mx-auto max-w-5xl px-6 py-32">
-    <h1 class="mb-16 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">About</h1>
+  <div class="about-page">
+    <section class="portfolio-shell about-intro" aria-labelledby="about-title">
+      <div>
+        <p class="about-label"><span aria-hidden="true">01 /</span> Introduction</p>
+        <h1 id="about-title">About <span>Me</span></h1>
+      </div>
 
-    <div class="max-w-3xl space-y-8 leading-relaxed text-slate-400">
-      {
-        intro.map((paragraph) => (
-          <p>{paragraph}</p>
-        ))
-      }
-    </div>
-  </section>
+      <div class="about-intro__copy">
+        {intro.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </section>
 
-  <div class="mx-auto max-w-6xl px-6">
-    <div class="h-px bg-slate-800"></div>
-  </div>
+    <section class="portfolio-shell about-focus-section" aria-labelledby="focus-title">
+      <div class="about-focus">
+        <div class="about-focus__intro">
+          <p class="about-label"><span aria-hidden="true">02 /</span> Current Focus</p>
+          <h2 id="focus-title">Bridging Research and Engineering</h2>
+          <p>
+            Developing machine learning systems for real-world applications while researching AI
+            methods for autonomous space systems.
+          </p>
+        </div>
 
-  <section class="mx-auto max-w-5xl px-6 py-32">
-    <h2 class="mb-16 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">Experience</h2>
-
-    <div class="space-y-20">
-      {
-        experience.map((item) => (
-          <div>
-            <div class="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-              <p class="font-medium text-slate-200">{item.role}</p>
-              <p class="text-sm text-slate-500">{item.period}</p>
+        <div class="about-focus__areas">
+          <div class="about-focus__area">
+            <span class="about-focus__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="23" height="23">
+                <path d="M8.5 8h7v8h-7zM7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2ZM9 2.5V5m6-2.5V5M9 19v2.5m6-2.5v2.5M2.5 9H5m-2.5 6H5m14-6h2.5M19 15h2.5"
+                  stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>Industry</h3>
+              <p class="about-focus__role">Machine Learning Engineer</p>
+              <p class="about-focus__organization">KP Labs</p>
             </div>
-
-            <p class="mt-4 max-w-3xl leading-relaxed text-slate-400">{item.summary}</p>
           </div>
-        ))
-      }
-    </div>
-  </section>
 
-  <div class="mx-auto max-w-6xl px-6">
-    <div class="h-px bg-slate-800"></div>
-  </div>
-
-  <section class="mx-auto max-w-5xl px-6 py-32">
-    <h2 class="mb-16 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">Education</h2>
-
-    <div class="space-y-20">
-      {
-        education.map((item) => (
-          <div>
-            <div class="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-              <p class="font-medium text-slate-200">{item.degree}</p>
-              <p class="text-sm text-slate-500">{item.period}</p>
+          <div class="about-focus__area">
+            <span class="about-focus__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="23" height="23">
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4" />
+                <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(-39 12 12)"
+                  stroke="currentColor" stroke-width="1.4" />
+                <circle cx="19" cy="6.3" r="1.6" fill="currentColor" />
+              </svg>
+            </span>
+            <div>
+              <h3>Research</h3>
+              <p class="about-focus__role">Industrial PhD Researcher</p>
+              <p class="about-focus__organization">IITiS PAN / Silesian University of Technology</p>
             </div>
-
-            {item.institution && <p class="mt-4 max-w-3xl text-sm text-slate-400">{item.institution}</p>}
-            <p class="mt-4 max-w-3xl leading-relaxed text-slate-400">{item.summary}</p>
           </div>
-        ))
-      }
-    </div>
-  </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-shell about-chapter" aria-labelledby="experience-title">
+      <div class="about-chapter__heading">
+        <span class="about-index" aria-hidden="true">03</span>
+        <h2 id="experience-title">Professional Experience</h2>
+      </div>
+      <AboutTimeline entries={experience} />
+    </section>
+
+    <section class="portfolio-shell about-chapter" aria-labelledby="education-title">
+      <div class="about-chapter__heading">
+        <span class="about-index" aria-hidden="true">04</span>
+        <h2 id="education-title">Education</h2>
+      </div>
+      <AboutTimeline entries={education} />
+    </section>
+
+    <section class="portfolio-shell about-beyond" aria-labelledby="beyond-title">
+      <div class="about-beyond__panel">
+        <div class="about-beyond__copy">
+          <div class="about-chapter__heading">
+            <span class="about-index" aria-hidden="true">05</span>
+            <h2 id="beyond-title">Beyond the Lab</h2>
+          </div>
+          <p>
+            When I'm not working on AI or autonomous systems, I enjoy lifting weights, exploring new places, and getting my hands dirty as a backyard mechanic. I'm also into sci-fi, anime, and the occasional side project that starts with 'this should be a quick experiment.'
+          </p>
+        </div>
+        <img
+          class="about-beyond__photo"
+          src={`${baseUrl}about/pyrkon-520.webp`}
+          srcset={`${baseUrl}about/pyrkon-520.webp 520w, ${baseUrl}about/pyrkon-960.webp 960w`}
+          sizes="(min-width: 82rem) 28.5rem, (min-width: 57rem) 34vw, (min-width: 36rem) 32rem, 82vw"
+          width="520"
+          height="693"
+          alt="Daniel Marek at Pyrkon, wearing a black jacket under purple lights"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+  </div>
 </Layout>
