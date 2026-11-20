@@ -1,90 +1,121 @@
 ---
+import AchievementCard from "../components/AchievementCard.astro";
 import Layout from "../layouts/Layout.astro";
+import "../styles/achievements.css";
 
 const sections = [
   {
-    title: "Awards",
-    items: [
+    id: "awards-and-distinctions",
+    title: "Awards & Distinctions",
+    kind: "award",
+    entries: [
       {
-        name: "3rd Place · Polish Space Agency Thesis Competition",
-        details: "For work on obstacle detection using machine learning.",
+        title: "Polish Space Fellowship Program",
+        label: "Finalist",
+        details: "Internship program for early-career researchers in Poland’s space sector.",
+        link: {
+          text: "Fellowship overview",
+          href: "https://arp.pl/pl/jak-dzialamy/projekty-kosmiczne/space-fellowship-program/",
+        },
       },
       {
-        name: "3rd Place · Trumpf Huettinger Engineering Thesis Competition",
-        details: "For work on rock segmentation.",
+        title: "Polish Space Agency Thesis Competition",
+        label: "3rd Place",
+        details: "Machine learning for autonomous rover perception and obstacle detection.",
+        link: {
+          text: "Polish Space Agency results",
+          href: "https://polsa.gov.pl/wydarzenia/nagroda-prezesa-polsa-za-najlepsza-prace-dyplomowa-znamy-zwyciezcow-edycji-2024/",
+        },
+      },
+      {
+        title: "TRUMPF Huettinger Engineering Thesis Competition",
+        label: "3rd Place",
+        details: "Research on extraterrestrial rock segmentation.",
+        link: {
+          text: "TRUMPF competition coverage",
+          href: "https://mikrokontroler.pl/2024/06/14/trumpf-nagrodzil-w-konkursie-najlepsze-prace-dyplomowe-studentow-i-absolwentow-polskich-uczelni-technicznych/",
+        },
       },
     ],
   },
   {
+    id: "programs-and-scholarships",
     title: "Programs & Scholarships",
-    items: [
+    kind: "program",
+    entries: [
       {
-        name: "Selected for spACE Camp 2026",
+        title: "spACE Camp 2026",
+        label: "Selected participant",
         details: "University of Warsaw Incubator",
+        link: {
+          text: "spACE Camp participants",
+          href: "https://spaceconference26.uw.edu.pl/camp/",
+        },
       },
       {
-        name: "Finalist · Polish Space Fellowship Program",
-      },
-      {
-        name: "Rector's Scholarship for Academic Excellence",
-        details: "Silesian University of Technology · 2023-2024",
+        title: "Rector’s Scholarship for Academic Excellence",
+        label: "Academic year 2023–2024",
+        details: "Silesian University of Technology",
       },
     ],
   },
   {
+    id: "certifications",
     title: "Certifications",
-    items: [
+    kind: "certification",
+    entries: [
       {
-        name: "LanguageCert Test of English · C2 Proficiency",
+        title: "LanguageCert Test of English",
+        details: "C2 Proficiency",
       },
       {
-        name: "AgilePM® Foundation",
+        title: "AgilePM® Foundation",
       },
     ],
   },
   {
-    title: "Conferences",
-    items: [
+    id: "conferences-and-activities",
+    title: "Conferences & Activities",
+    kind: "activity",
+    entries: [
       {
-        name: "Speaker · Gekkon 2024",
+        title: "Gekkon 2024",
+        label: "Speaker",
         details: "Planetary Rovers Through the Decades and How AI Is Changing Space Exploration",
       },
       {
-        name: "Co-organizer · In@Security 2025",
+        title: "In@Security 2025",
+        label: "Co-organizer",
       },
     ],
   },
-];
+] as const;
 ---
 
 <Layout
   title="Achievements - Daniel Marek"
-  description="Daniel Marek's awards, scholarships, conference activities, and selection for spACE Camp 2026."
+  description="Daniel Marek’s awards, scholarships, certifications, and conference activities."
+  orbitalTheme
 >
-  <section class="mx-auto max-w-5xl px-6 py-32">
-    <h1 class="mb-20 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
-      Achievements & Recognition
-    </h1>
+  <div class="achievements-page">
+    <header class="portfolio-shell achievements-intro">
+      <h1>Achievements &amp; <span>Recognition</span></h1>
+    </header>
 
-    <div class="space-y-24">
-      {
-        sections.map((section) => (
-          <section>
-            <h2 class="mb-10 text-2xl font-semibold text-slate-200">{section.title}</h2>
-
-            <div class="space-y-10">
-              {
-                section.items.map((item) => (
-                  <div>
-                    <p class="font-medium text-slate-200">{item.name}</p>
-                    {item.details && <p class="mt-1 text-sm text-slate-500">{item.details}</p>}
-                  </div>
-                ))
-              }
-            </div>
-          </section>
-        ))
-      }
+    <div class="portfolio-shell achievements-sections">
+      {sections.map(({ id, title, kind, entries }, index) => (
+        <section class={`achievements-section achievements-section--${kind}`} aria-labelledby={id}>
+          <div class="achievements-section__heading">
+            <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <h2 id={id}>{title}</h2>
+          </div>
+          <ul class="achievements-list" role="list">
+            {entries.map((entry) => (
+              <li><AchievementCard kind={kind} {...entry} /></li>
+            ))}
+          </ul>
+        </section>
+      ))}
     </div>
-  </section>
+  </div>
 </Layout>

@@ -5,12 +5,14 @@ interface Props {
   title?: string;
   description?: string;
   orbitalHomepage?: boolean;
+  orbitalTheme?: boolean;
 }
 
 const {
   title = "Daniel Marek",
   description = "Daniel Marek, AI and autonomous systems engineer and industrial PhD researcher working on computer vision, robotic perception, space AI, and edge deployment.",
   orbitalHomepage = false,
+  orbitalTheme = orbitalHomepage,
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -44,9 +46,9 @@ const navLinks = [
 
   <body class:list={[
     "relative overflow-x-hidden font-sans text-slate-200",
-    orbitalHomepage ? "orbital-page" : "bg-[#0b1020]",
+    orbitalTheme ? "orbital-page" : "bg-[#0b1020]",
   ]}>
-    {!orbitalHomepage && (
+    {!orbitalTheme && (
       <div class="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
         <div
           class="drift-slow absolute left-[-10%] top-[-20%] h-[800px] w-[800px] rounded-full bg-cyan-500/25 blur-[150px]"

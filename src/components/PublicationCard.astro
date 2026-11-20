@@ -1,0 +1,76 @@
+---
+import type { Publication } from "../data/publications";
+
+interface Props {
+  publication: Publication;
+}
+
+const { publication } = Astro.props;
+const { title, authors, venue, venueDetails, summary, doi, url } = publication;
+const link = url ?? (doi ? `https://doi.org/${doi}` : undefined);
+---
+
+<article class="publication-card">
+  <div class="publication-card__meta">
+    {publication.status === "published" ? (
+      <>
+        <span class="publication-card__year">{publication.citationDate.slice(0, 4)}</span>
+        {publication.firstOnline && (
+          <span class="publication-card__online">
+            First online <time datetime={publication.firstOnline}>{publication.firstOnline.slice(0, 4)}</time>
+          </span>
+        )}
+      </>
+    ) : (
+      <span class="publication-card__status">Under Review</span>
+    )}
+  </div>
+
+  <div class="publication-card__body">
+    {publication.status === "under-review" && publication.provisionalTitle && (
+      <p class="publication-card__topic">Research topic</p>
+    )}
+    <h3>{title}</h3>
+
+    {authors && authors.length > 0 && (
+      <p class="publication-card__authors">
+        {authors.map((author, index) => (
+          <>
+            {index > 0 && ", "}
+            {author === "Daniel Marek" ? <strong>{author}</strong> : author}
+          </>
+        ))}
+      </p>
+    )}
+
+    {(venue || venueDetails) && (
+      <p class="publication-card__venue">
+        {venue && publication.status === "under-review" && "Submitted to "}
+        {venue && <cite>{venue}</cite>}
+        {venue && venueDetails && " · "}
+        {venueDetails}
+      </p>
+    )}
+
+    {summary && <p class="publication-card__summary">{summary}</p>}
+
+    {(doi || link) && (
+      <div class="publication-card__references">
+        {doi && <p><span>DOI</span> {doi}</p>}
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Read ${title} (opens in a new tab)`}
+          >
+            Read publication
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true">
+              <path d="M4 12 12 4m-6 0h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</article>

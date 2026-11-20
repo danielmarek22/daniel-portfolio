@@ -329,16 +329,13 @@
   font-size: 0.875rem;
 }
 
-.home-astra__icon {
-  display: grid;
-  width: 3.2rem;
-  height: 3.2rem;
+.home-astra__logo {
+  width: 3.5rem;
+  height: 3.5rem;
   flex: none;
-  place-items: center;
   border: 1px solid var(--folio-border);
   border-radius: 0.65rem;
-  background: #172e4c;
-  color: var(--folio-highlight);
+  object-fit: contain;
 }
 
 .home-astra__description .home-tags {
