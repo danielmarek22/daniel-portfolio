@@ -34,6 +34,7 @@ const navLinks = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,15 +66,7 @@ const navLinks = [
       <div class="portfolio-shell site-header__inner">
         <a href={baseUrl} class="site-brand">
           <span class="site-brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
-              <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.25" />
-              <ellipse
-                cx="12" cy="12" rx="10" ry="4.1"
-                transform="rotate(-37 12 12)"
-                stroke="currentColor" stroke-width="1.25"
-              />
-              <circle cx="19.1" cy="6.2" r="1.45" fill="currentColor" />
-            </svg>
+            <img src={`${baseUrl}favicon.svg`} alt="" width="28" height="28" decoding="async" />
           </span>
           <span>Daniel Marek</span>
         </a>
