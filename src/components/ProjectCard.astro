@@ -19,6 +19,20 @@ const baseUrl = import.meta.env.BASE_URL;
     image && (featured || layout === "horizontal") && "project-card--split",
   ]}
 >
+  {image && (
+    <figure class:list={["project-card__media", image.treatment && `project-card__media--${image.treatment}`]}>
+      <img
+        src={`${baseUrl}${image.src}`}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading="lazy"
+        decoding="async"
+      />
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  )}
+
   <div class="project-card__body">
     {(metadata || status) && (
       <p class="project-card__metadata">
@@ -78,18 +92,4 @@ const baseUrl = import.meta.env.BASE_URL;
       </div>
     )}
   </div>
-
-  {image && (
-    <figure class:list={["project-card__media", image.treatment && `project-card__media--${image.treatment}`]}>
-      <img
-        src={`${baseUrl}${image.src}`}
-        alt={image.alt}
-        width={image.width}
-        height={image.height}
-        loading="lazy"
-        decoding="async"
-      />
-      {image.caption && <figcaption>{image.caption}</figcaption>}
-    </figure>
-  )}
 </article>

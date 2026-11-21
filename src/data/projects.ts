@@ -54,7 +54,7 @@ export const projectSections: readonly ProjectSection[] = [
             title: "FAST-EO",
             metadata: "ESA Φ-lab · 2024–2025",
             description:
-              "Prepared datasets and fine-tuned foundation models for detecting methane emissions in multispectral satellite imagery.",
+              "Prepared datasets and fine-tuned foundation models for detecting methane emissions in multispectral satellite imagery. Co-developed a public methane detection benchmark using simulated PhiSat-2 imagery derived from AVIRIS-NG hyperspectral data.",
           },
           {
             title: "CCN",
@@ -79,7 +79,10 @@ export const projectSections: readonly ProjectSection[] = [
           treatment: "concept",
           caption: "Earth observation concept illustration",
         },
-        links: [{ label: "Project Website", href: "https://www.fast-eo.eu/" }],
+        links: [
+          { label: "Project Website", href: "https://www.fast-eo.eu/" },
+          { label: "View Dataset", href: "https://doi.org/10.5281/zenodo.14900454" },
+        ],
       },
       {
         title: "SPARK",
@@ -89,15 +92,6 @@ export const projectSections: readonly ProjectSection[] = [
           "Contributed to AI-based atmospheric correction for high-resolution optical satellite imagery, focusing on fine-tuning deep learning models for the target application.",
         ],
         technologies: ["Optical Satellite Imagery", "Atmospheric Correction", "Model Fine-Tuning"],
-      },
-      {
-        title: "Simulated PhiSat-2 Methane Benchmark Dataset",
-        metadata: "2025",
-        paragraphs: [
-          "Co-authored a public methane detection benchmark based on simulated PhiSat-2 imagery derived from AVIRIS-NG hyperspectral data.",
-        ],
-        technologies: ["Earth Observation", "Hyperspectral Data", "Synthetic Imagery"],
-        links: [{ label: "View Dataset", href: "https://doi.org/10.5281/zenodo.14900454" }],
       },
     ],
   },
