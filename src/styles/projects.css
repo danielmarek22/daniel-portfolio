@@ -291,14 +291,8 @@
   background: #101d30;
 }
 
-.project-card:not(.project-card--split) .project-card__media {
-  grid-row: 1;
-}
-
 .project-card--split .project-card__media {
   aspect-ratio: 1.85;
-  border-top: 1px solid var(--folio-border);
-  border-bottom: 0;
 }
 
 .project-card__media img {
@@ -383,9 +377,14 @@
     grid-template-columns: minmax(0, 1.36fr) minmax(0, 1fr);
   }
 
+  .project-card--split .project-card__body {
+    grid-area: 1 / 1;
+  }
+
   .project-card--split .project-card__media {
+    grid-area: 1 / 2;
     aspect-ratio: auto;
-    border-top: 0;
+    border-bottom: 0;
     border-inline-start: 1px solid var(--folio-border);
   }
 
